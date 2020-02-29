@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "module": "CommonJS",
+    "noEmitOnError": true,
+    "strictNullChecks": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
