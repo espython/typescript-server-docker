@@ -1,7 +1,7 @@
 {
-   "name": "typescript-node-starter",
+   "name": "typescript-node-gql-server",
    "version": "0.1.0",
-   "description": "",
+   "description": "make a typescript nodejs graphql server",
    "main": "index.js",
    "scripts": {
       "dev": "nodemon",
