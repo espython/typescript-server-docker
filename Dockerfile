@@ -18,4 +18,4 @@ COPY --from=builder /usr/app/dist ./dist
 COPY ormconfig.docker.json .
 COPY .env .
 EXPOSE 4000
-CMD node dist/src/index.js
+CMD ["pm2-runtime", "dist/src/index.js"]
