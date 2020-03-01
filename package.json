@@ -6,7 +6,7 @@
    "scripts": {
       "dev": "nodemon",
       "build": "npm run lint && tsc -p .",
-      "prod": "tsc && node ./dist/index.js",
+      "prod": "tsc && node ./dist/src/index.js",
       "start": "nodemon --exec ts-node src/index.ts",
       "lint": "eslint src/**/*",
       "test": "echo \"Error: no test specified\" && exit 1"
