@@ -16,8 +16,23 @@ const resolvers = {
   }
 };
 
+const connectDb = async (retries = 5) => {
+  while (retries) {
+    try {
+      await createConnection();
+      break;
+    } catch (err) {
+      console.log(err);
+      retries -= 1;
+      console.log(`retries left: ${retries}`);
+      // wait 5 seconds
+      await new Promise(res => setTimeout(res, 5000));
+    }
+  }
+};
+
 const server = new GraphQLServer({ typeDefs, resolvers });
-createConnection()
+connectDb()
   .then(() => {
     server.start({ port: 4000 }, () =>
       console.log("Server is running on localhost:4000")
