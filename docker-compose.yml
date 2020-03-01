@@ -2,10 +2,11 @@ version: "3"
 services:
   db:
     image: postgres
+    restart: always
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-      POSTGRES_DB: stripe-example
+      POSTGRES_DB: graphql-server
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
@@ -16,3 +17,4 @@ services:
       - db
     ports:
       - "4000:4000"
+    # command: sh -c "npm install && npm run dev"

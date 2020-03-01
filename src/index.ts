@@ -20,6 +20,7 @@ const connectDb = async (retries = 5) => {
   while (retries) {
     try {
       await createConnection();
+      console.log(`connection has been created Successfully`);
       break;
     } catch (err) {
       console.log(err);
