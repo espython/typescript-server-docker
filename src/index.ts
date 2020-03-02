@@ -21,6 +21,7 @@ const connectDb = async (retries = 5) => {
     try {
       await createConnection();
       console.log(`connection has been created Successfully`);
+      console.log(`test git-hub deployment`);
       break;
     } catch (err) {
       console.log(err);

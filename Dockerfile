@@ -1,7 +1,7 @@
 # stage 1 building the code
 FROM node as builder
 WORKDIR /usr/app
-RUN npm install pm2 -g
+# RUN npm install pm2 -g
 COPY package*.json ./
 RUN npm install
 COPY . .
@@ -18,4 +18,4 @@ COPY --from=builder /usr/app/dist ./dist
 COPY ormconfig.docker.json .
 COPY .env .
 EXPOSE 4000
-CMD ["pm2-runtime", "dist/src/index.js"]
+CMD node dist/src/index.js
