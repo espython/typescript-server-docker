@@ -7,12 +7,14 @@ import { createConnection } from "typeorm";
 const typeDefs = `
   type Query {
     hello(name: String): String!
+    iamnew(name: String): String!
   }
 `;
 
 const resolvers = {
   Query: {
-    hello: (_, { name }): string => `Hello ${name || "World"}`
+    hello: (_, { name }): string => `Hello ${name || "World"}`,
+    iamnew: (_, { name }): string => `Hi from new code ${name || "World"}`
   }
 };
 
