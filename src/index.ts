@@ -38,8 +38,9 @@ const connectDb = async (retries = 5) => {
 const server = new GraphQLServer({ typeDefs, resolvers });
 connectDb()
   .then(() => {
-    server.start({ port: 4000 }, () =>
-      console.log("Server is running on localhost:4000")
-    );
+    server.start({ port: 4000 }, () => {
+      console.log("Server is running on localhost:4000");
+      console.log("web hooks works successfully");
+    });
   })
   .catch(error => console.log(error));
